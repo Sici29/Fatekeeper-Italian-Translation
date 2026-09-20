@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+!Fatekeeper-Italian-Translation.spec
+*.zip
+*.7z
+*.rar
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
