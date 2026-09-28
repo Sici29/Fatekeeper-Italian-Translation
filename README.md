@@ -7,6 +7,19 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Offrimi un caffè](https://img.shields.io/badge/Offrimi_un_caff%C3%A8-Sostieni_il_progetto-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/sici29)
 
+<!-- gioca-in-italiano:inizio -->
+<p align="center"><a href="https://sici29.github.io/gioca-in-italiano/"><img src="https://sici29.github.io/gioca-in-italiano/img/banner.jpg" alt="Gioca in Italiano: tutte le traduzioni italiane di Sici29 in un'app sola" width="100%"></a></p>
+
+> [!TIP]
+> **Tutte le mie traduzioni in un'app sola: [Gioca in Italiano](https://sici29.github.io/gioca-in-italiano/)**
+>
+> Installa e aggiorna questa traduzione con un clic, ti avvisa quando esce una nuova versione e ti fa scoprire le altre: [Aniimo](https://sici29.github.io/gioca-in-italiano/aniimo/), [Neverness to Everness](https://sici29.github.io/gioca-in-italiano/neverness-to-everness/), [ARK: Survival Ascended](https://sici29.github.io/gioca-in-italiano/ark-survival-ascended/) e [Star Citizen](https://sici29.github.io/gioca-in-italiano/star-citizen/).
+>
+> **Manca il tuo gioco?** [Proponilo](https://sici29.github.io/gioca-in-italiano/#proponi) e vota quelli proposti dagli altri: i più votati diventano le prossime traduzioni.
+>
+> **[⬇ Scarica Gioca in Italiano](https://github.com/Sici29/gioca-in-italiano/releases/latest/download/GiocaInItaliano.exe)** · gratis, per Windows 10 e 11
+<!-- gioca-in-italiano:fine -->
+
 Traduzione italiana completa, professionale e fedele per l'action RPG dark fantasy **Fatekeeper** (Steam AppID: [2186990](https://store.steampowered.com/app/2186990/Fatekeeper/)).
 
 [☕ **Offrimi un caffè e sostieni le future traduzioni**](https://buymeacoffee.com/sici29)
