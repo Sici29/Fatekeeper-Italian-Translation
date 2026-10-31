@@ -6,7 +6,7 @@ Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.0.0/)
 
 ---
 
-## [1.3.0] - 31/10/2026
+## [0.1.4-R1] - 31/10/2026
 
 ### Aggiornamento di Compatibilità (Build Steam v0.1.4 / BuildID 26328649)
 - **Database Tradotto Espanso a 1.795 Voci (100% dell'intero gioco)**:

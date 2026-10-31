@@ -36,7 +36,7 @@ except Exception:
     pass
 
 APP_NAME = "Fatekeeper - Traduzione Italiana"
-APP_VERSION = "1.3.0"
+APP_VERSION = "0.1.4-R1"
 STEAM_APP_ID = "2186990"
 GAME_FOLDER_NAME = "Fatekeeper"
 GAME_EXES = ("SLASHER.exe", "SLASHER-Win64-Shipping.exe")
