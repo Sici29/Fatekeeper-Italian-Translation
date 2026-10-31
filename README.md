@@ -1,8 +1,8 @@
 # Fatekeeper - Traduzione Italiana Completa
 
-[![GitHub release](https://img.shields.io/badge/release-0.1.3--R1-blue.svg)](https://github.com/Sici29/Fatekeeper-Italian-Translation/releases)
+[![GitHub release](https://img.shields.io/badge/release-1.3.0-blue.svg)](https://github.com/Sici29/Fatekeeper-Italian-Translation/releases)
 [![Translation Coverage](https://img.shields.io/badge/traduzione-100%25-brightgreen.svg)](#)
-[![Steam Build](https://img.shields.io/badge/Steam%20Build-0.1.3-orange.svg)](#)
+[![Steam Build](https://img.shields.io/badge/Steam%20Build-0.1.4-orange.svg)](#)
 [![Game Engine](https://img.shields.io/badge/Unreal%20Engine-5.6.1-purple.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Offrimi un caffè](https://img.shields.io/badge/Offrimi_un_caff%C3%A8-Sostieni_il_progetto-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/sici29)
@@ -24,19 +24,20 @@ Traduzione italiana completa, professionale e fedele per l'action RPG dark fanta
 
 [☕ **Offrimi un caffè e sostieni le future traduzioni**](https://buymeacoffee.com/sici29)
 
-Progetto sviluppato da **Sici29** e distribuito con installer automatico one-file standalone per Windows (Release **0.1.3-R1** per build Steam **0.1.3**).
+Progetto sviluppato da **Sici29** e distribuito con installer automatico one-file standalone per Windows (Release **1.3.0** per build Steam **0.1.4** / BuildID `26328649`).
 
 ---
 
 ## 🗡️ Caratteristiche della Traduzione
 
-- **Copertura Totale (100%)**: 1.514 voci tradotte e revisionate.
-- **Interfaccia & Menu**: Menu principale, schermate di caricamento, popup di sistema e impostazioni audio/video/comandi interamente localizzati.
-- **Impostazioni & Controlli**: Allineamento al 100% di tutti gli hash binari `CityHash64` (`SourceStringHash`) per le descrizioni delle opzioni e i comandi di ripristino.
-- **Lore & Oggetti**: Armi, armature, gioielli, pergamene, ingredienti e descrizioni narrative storiche arricchite con terminologia fantasy coerente.
-- **Alchimia & Talenti**: Calderone alchemico, elisir, unguenti, bombe e costellazioni di abilità.
-- **Dialoghi & Sottotitoli**: Fedeltà narrativa per tutti i personaggi (Druido, Topo Kor Guran, Terul e creature del mondo di gioco).
-- **Stabilità Assoluta**: Risolto ogni problema di crash memory access (`0x0000000000000148`), rimosse lingue fantasma e preservato intatto il file base originale di Steam (`pakchunk0-Windows.pak`).
+- **Copertura Totale (100%)**: 1.795 voci tradotte e revisionate.
+- **Scheda Attributi Dettagliata**: Localizzazione integrale di tutti i parametri del personaggio (`ST_AttributeUI`, 184 voci): resistenze elementali, penetrazioni al danno, tempi di recupero e regressione stati alterati, finestre di parata e deviazione, parametri telecinesi ed efficienza alchemica.
+- **Interfaccia & Menu**: Menu principale, schermate di caricamento con approfondimenti di lore, popup di sistema e impostazioni audio/video/comandi interamente localizzati.
+- **Supporto Controller Esteso**: Traduzione dei nuovi profili di layout per gamepad (PlayStation, Xbox, Steam) e controllo luminosità HDR.
+- **Lore & Oggetti**: Armi, armature, amuleti, chiavi, ingredienti e descrizioni narrative storiche (Mar Guran, il Portale Lunare, le Gallerie di Trasporto) arricchite con terminologia fantasy coerente.
+- **Alchimia & Talenti**: Calderone alchemico, elisir, unguenti, granate, modificatori procedurali e costellazioni di abilità.
+- **Dialoghi & Sottotitoli**: Fedeltà narrativa per tutti i personaggi (Kor Tenarim, Kor Maretan, Terul, Chukran, Vekran Xulratan).
+- **Stabilità Assoluta**: Piena compatibilità con l'update 0.1.4, preservato intatto il file base originale di Steam (`pakchunk0-Windows.pak`, 90.088.270 byte).
 
 ---
 
@@ -61,11 +62,11 @@ Se preferisci usare gli script inclusi nel pacchetto release:
 In Fatekeeper (basato su Unreal Engine 5.6.1 Shipping), l'engine ignora i `.pak` di modding classici se non rispettano determinati requisiti tecnici:
 
 1. **Cifratura Indici UE V11**:
-   - Gli indici del file `.pak` (*Primary Index*, *Path Hash Index*, *Full Directory Index*) richiedono crittografia **AES-256-ECB** con la chiave di spedizione del gioco (`0x3AB2785AB187B2089737DB4BE249A3C1E885D7ED7F0BBF225B5320B0529A511F`) e il seed di hash dei percorsi `0xBF5F7DEF`.
+   - Gli indici del file `.pak` (*Primary Index*, *Path Hash Index*, *Full Directory Index*) richiedono crittografia **AES-256-ECB** con la chiave di spedizione del gioco (`0x3AB2785AB187B2089737DB4BE249A3C1E885D7ED7F0BBF225B5320B0529A511F`) e il seed di hash dei percorsi `0xC623D5C0` (3324237248).
 2. **Registrazione Cultura (`Game.locmeta`)**:
-   - Unreal Engine non carica i testi localizzati se la cultura non è esplicitamente dichiarata all'interno del file metadati binario `Game.locmeta`. Sono registrate esattamente le due culture supportate `en` e `it`, garantendo un selettore lingue pulito a 2 opzioni senza duplicati.
+   - Unreal Engine non carica i testi localizzati se la cultura non è esplicitamente dichiarata all'interno del file metadati binario `Game.locmeta`. Con la build 0.1.4, `Game.locmeta` include la cultura `it` registrata insieme alle culture ufficiali native (`de-DE`, `en`, `fr`, `ru`, `uk`, `zh-Hans`).
 3. **Corrispondenza `SourceStringHash` (CityHash64)**:
-   - Ogni voce nel file binario `Game.locres` è validata da UE5 tramite il checksum CityHash64 della stringa sorgente. Se il testo originale non coincide esattamente con quello compilato negli asset `.uasset`, il motore rigetta la traduzione. Tutte le 101 discrepanze originali sono state allineate con gli asset di gioco.
+   - Ogni voce nel file binario `Game.locres` è validata da UE5 tramite il checksum CityHash64 della stringa sorgente. Tutte le 1.795 stringhe sono allineate al 100% con gli asset di gioco aggiornati.
 
 ---
 

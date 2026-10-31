@@ -36,28 +36,28 @@ except Exception:
     pass
 
 APP_NAME = "Fatekeeper - Traduzione Italiana"
-APP_VERSION = "0.1.3-R1"
+APP_VERSION = "1.3.0"
 STEAM_APP_ID = "2186990"
 GAME_FOLDER_NAME = "Fatekeeper"
 GAME_EXES = ("SLASHER.exe", "SLASHER-Win64-Shipping.exe")
-TOTAL_STRINGS = 1514
+TOTAL_STRINGS = 1795
 
 # SHA-256 e parametri di riferimento
 ORIG_BASE_PAK_NAME = "pakchunk0-Windows.pak"
-ORIG_BASE_PAK_SHA256 = "3582A140B995E0BDF1134D94785F6C5B5D582CDBEEBCC24B6113C2D49A7DF088"
-ORIG_BASE_PAK_SIZE = 29988335
+ORIG_BASE_PAK_SHA256 = "206917CD8F9B5EE4BAE81FCA3AE9758FDE78863C90C85B3147606AE71B00E3BD"
+ORIG_BASE_PAK_SIZE = 90088270
 
 PATCH_PAK_NAME = "pakchunk0-Windows_P.pak"
-PATCH_PAK_SHA256 = "BDC587E99A4711EB9B43F0651514F55C5EF4E308C3314BEF127E24E9DCD1A8D6"
+PATCH_PAK_SHA256 = "C26E77EE04ABE2F4A7A5A6BF2F282638A75C37BB78FCB5022BDB03AD1A7630BF"
 
 UPROJECT_NAME = "SLASHER.uproject"
 UPROJECT_SHA256 = "C05FCAF67E76A7D4ECF70E05D44D9626A6AEA7C8FC976FC5B5979110CB633089"
 
 LOCRES_NAME = "Game.locres"
-LOCRES_SHA256 = "0F4CB79F1C9CAA858AB01F538838016F5034C79AEF824455FE5DA466F14133BB"
+LOCRES_SHA256 = "29051D4E7BFA6945567EF28A5E521EE3F8CE1512D623287B3B92F59169BD4356"
 
 LOCMETA_NAME = "Game.locmeta"
-LOCMETA_SHA256 = "96D86E30930C8C7083B3F57288F47C7BC1A17E421BB735D6F8A788F86EB1C217"
+LOCMETA_SHA256 = "9875E3035BCC03675BE002BB57F8C94B70CF7EC8E6BFB5FCAC2D32EDD3B1826E"
 
 # Percorsi relativi nel gioco
 REL_BASE_PAK = Path("SLASHER") / "Content" / "Paks" / ORIG_BASE_PAK_NAME
@@ -267,6 +267,8 @@ def find_payload_file(filename: str) -> Path:
         APP_DIR / filename,
         APP_DIR / "payload" / filename,
         Path(__file__).resolve().parent.parent / "payload" / filename,
+        Path(__file__).resolve().parent.parent / "08_GITHUB" / "SORGENTI" / "payload" / filename,
+        Path(__file__).resolve().parent.parent / "03_PATCH" / filename,
     ]
     for c in candidates:
         if c.exists() and c.is_file() and c.stat().st_size > 0:
@@ -327,7 +329,25 @@ def cmd_install(args: argparse.Namespace) -> int:
                 restored = True
                 break
         if not restored:
-            print(f"{ConsoleColor.RED}[ERRORE] Impossibile trovare il file pakchunk0 originale.{ConsoleColor.RESET}")
+            print(f"{ConsoleColor.RED}[ERRORE] Impossibile trovare il file pakchunk0 originale aggiornato.{ConsoleColor.RESET}")
+
+    # Backup di sicurezza del file base originale se non presente o di versione precedente
+    if target_base_pak.exists() and target_base_pak.stat().st_size == ORIG_BASE_PAK_SIZE:
+        local_bak = game_dir / "SLASHER" / "Content" / "Paks" / "pakchunk0-Windows.pak.bak"
+        if not local_bak.exists() or local_bak.stat().st_size != ORIG_BASE_PAK_SIZE:
+            try:
+                shutil.copy2(target_base_pak, local_bak)
+                print(f"  [+] Backup di sicurezza aggiornato: {local_bak.name}")
+            except Exception:
+                pass
+        doc_bak = BACKUP_DIR / ORIG_BASE_PAK_NAME
+        if not doc_bak.exists() or doc_bak.stat().st_size != ORIG_BASE_PAK_SIZE:
+            try:
+                BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(target_base_pak, doc_bak)
+                print(f"  [+] Backup utente salvato in: {doc_bak}")
+            except Exception:
+                pass
 
     # Percorsi destinazione
     target_patch_pak = game_dir / REL_PATCH_PAK
@@ -344,6 +364,7 @@ def cmd_install(args: argparse.Namespace) -> int:
     for obs in [
         game_dir / "SLASHER" / "Content" / "Paks" / "SLASHER_Italian_P.pak",
         game_dir / "SLASHER" / "Content" / "Paks" / "~mods" / "SLASHER_Italian_P.pak",
+        game_dir / "SLASHER" / "Content" / "Paks" / "pakchunk0-Windows_P.pak.disabled",
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "de-DE" / LOCRES_NAME,
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "Italiano" / LOCRES_NAME,
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "en" / LOCRES_NAME,
@@ -354,6 +375,7 @@ def cmd_install(args: argparse.Namespace) -> int:
             except Exception:
                 pass
     for p in [
+        game_dir / "SLASHER" / "Content" / "Paks" / "pakchunk0-Windows_P",
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "Italiano",
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "en",
         game_dir / "SLASHER" / "Content" / "Localization" / "Game" / "de-DE",
@@ -521,7 +543,7 @@ def interactive_menu():
     while True:
         print("\n" + "=" * 60)
         print(f" {ConsoleColor.BOLD}{ConsoleColor.CYAN}Fatekeeper - Traduzione Italiana (v{APP_VERSION}){ConsoleColor.RESET}")
-        print(" Traduzione professionale 100% (1.511 testi dark fantasy)")
+        print(" Traduzione professionale 100% (1.795 testi dark fantasy)")
         print("=" * 60)
         print(" [1] Installa Traduzione Italiana")
         print(" [2] Verifica Integrità File")
