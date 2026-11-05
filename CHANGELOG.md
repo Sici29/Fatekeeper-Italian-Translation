@@ -6,6 +6,22 @@ Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.0.0/)
 
 ---
 
+## [0.1.4.1-R1] - 05/11/2026
+
+### Aggiornamento di Compatibilità Hotfix (Build Steam v0.1.4.1 / BuildID 26436096)
+- **Compatibilità Totale con Hotfix 0.1.4.1**:
+  - Piena compatibilità con i fix ufficiali a comandi controller/mouse, navigazione menu radiale, sensibilità levette e correzioni finishing move (`SlomoSource.Finisher.02`).
+  - Integrità completa del database localizzato a 1.795 stringhe (100% dell'intero gioco).
+- **Riallineamento Tecnico Configurazione Motore UE5**:
+  - File di configurazione di staging `DefaultGame.ini` aggiornato a `ProjectVersion=0.1.4.1`.
+  - File base di riferimento Steam `pakchunk0-Windows.pak` aggiornato a SHA-256 `FD6220D50F44C69875C70DF0D7C207AC774FA8B80966BF7365E4F598E7D53BA9` (90.088.270 byte).
+  - Ricompilato e verificato l'archivio patch cifrato `pakchunk0-Windows_P.pak` (73.483 byte, SHA-256 `F8A6882638826DE0F7250B0C8427B180D31BC2BCFCD2A2AE6A4E96A9BEAC4D71`).
+- **Aggiornamento Installer Standalone v0.1.4.1-R1**:
+  - Ricompilato `Fatekeeper-Italian-Translation.exe` con i nuovi parametri crittografici.
+  - Verifica automatica di integrità a 4 vie aggiornata con esito `[OK]`.
+
+---
+
 ## [0.1.4-R1] - 31/10/2026
 
 ### Aggiornamento di Compatibilità (Build Steam v0.1.4 / BuildID 26328649)
@@ -48,4 +64,3 @@ Il formato è basato su [Keep a Changelog](https://keepachangelog.com/it/1.0.0/)
   - Patch pacchettizzata in formato UE V11 (`pakchunk0-Windows_P.pak`) cifrata con chiave nativa AES-256-ECB.
 - **Installer Autonomo One-File**:
   - Rilasciato `Fatekeeper-Italian-Translation.exe` (7.8 MB) con rilevamento automatico della libreria Steam, backup di sicurezza e ripristino 100% pulito.
-  - Script ausiliari inclusi: `Installa_Traduzione_Italiana.bat`, `Controlla_Integrita.bat`, `Ripristina_Originale.bat`.

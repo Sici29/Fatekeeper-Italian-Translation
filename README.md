@@ -1,8 +1,8 @@
 # Fatekeeper - Traduzione Italiana Completa
 
-[![GitHub release](https://img.shields.io/badge/release-0.1.4--R1-blue.svg)](https://github.com/Sici29/Fatekeeper-Italian-Translation/releases)
+[![GitHub release](https://img.shields.io/badge/release-0.1.4.1--R1-blue.svg)](https://github.com/Sici29/Fatekeeper-Italian-Translation/releases)
 [![Translation Coverage](https://img.shields.io/badge/traduzione-100%25-brightgreen.svg)](#)
-[![Steam Build](https://img.shields.io/badge/Steam%20Build-0.1.4-orange.svg)](#)
+[![Steam Build](https://img.shields.io/badge/Steam%20Build-0.1.4.1-orange.svg)](#)
 [![Game Engine](https://img.shields.io/badge/Unreal%20Engine-5.6.1-purple.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Offrimi un caffè](https://img.shields.io/badge/Offrimi_un_caff%C3%A8-Sostieni_il_progetto-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/sici29)
@@ -24,7 +24,7 @@ Traduzione italiana completa, professionale e fedele per l'action RPG dark fanta
 
 [☕ **Offrimi un caffè e sostieni le future traduzioni**](https://buymeacoffee.com/sici29)
 
-Progetto sviluppato da **Sici29** e distribuito con installer automatico one-file standalone per Windows (Release **0.1.4-R1** per build Steam **0.1.4** / BuildID `26328649`).
+Progetto sviluppato da **Sici29** e distribuito con installer automatico one-file standalone per Windows (Release **0.1.4.1-R1** per build Steam **0.1.4.1** / BuildID `26436096`).
 
 ---
 
